@@ -1,3 +1,3 @@
 
 //update camera
-glc_CameraUpdate();
+camera.update();

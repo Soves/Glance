@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "glance",
-    "path": "glance.yyp",
+    "path": "folders/glance.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_glance_bg",
