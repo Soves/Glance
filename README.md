@@ -5,5 +5,5 @@
 <p align="center"> Window and camera management library for GMS2 </p>
 
 <p align="center"><a href="https://github.com/Soves/Glance/releases">Download</a></p>
-<p align="center"><a href="https://github.com/Soves/Glance/wiki">Docs</a></p>
+<p align="center"><a href="https://github.com/Soves/Glance/wiki">Documentation</a></p>
 
