@@ -4,4 +4,4 @@
 <p align="center"><b> Glance </b></p>
 <p align="center"> Window and camera management library for GMS2 </p>
 
-<p align="center"><a href="github.com/Soves/Glance/releases/latest">Download</a></p>
+<p align="center"><a href="https://github.com/Soves/Glance/releases">Download</a></p>
