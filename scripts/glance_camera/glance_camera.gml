@@ -21,7 +21,7 @@ function glc_Camera(options) constructor {
 	rounding = _glc_option(options, "rounding", GLC_ROUND_N); 
 	interpolateSpeed = _glc_option(options, "speed", .25);
 	stretch = _glc_option(options, "stretch", true);
-	zoom = _glc_option(options, "zoom", .5);
+	zoom = _glc_option(options, "zoom", 1);
 	strict = _glc_option(options, "strict", true);
 	
 	interpolate = _glc_option(options, "interpolate", function(from, to){
