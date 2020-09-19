@@ -114,6 +114,7 @@ function _glc_UpdateWindow(window){
 	
 	if window.scalingMode == GLC_HORIZONTAL{
 		_w = glc_AspectWidth( _h, window.aspectRatio);
+
 	}else if window.scalingMode == GLC_VERTICAL{
 		_h = glc_AspectHeight( _w, window.aspectRatio);		
 	}

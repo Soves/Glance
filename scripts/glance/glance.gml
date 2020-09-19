@@ -63,11 +63,3 @@ function glc_AspectHeight(width, ratio){
 	return _h;
 }
 
-
-
-#region //glc functions
-	
-
-
-	
-#endregion

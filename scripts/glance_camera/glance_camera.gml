@@ -135,7 +135,7 @@ function _glc_UpdateCamera(camera){
 	
 		var _w = width;
 		var _h = height;
-	
+		
 		if strict{
 			zoom = _glc_round_n( zoom, 1);
 		}
@@ -162,11 +162,19 @@ function _glc_UpdateCamera(camera){
 
 function _glc_resize_appsurf(camera){
 	with camera{
-		if !stretch{
+		if stretch{
+			
+			var _w = glc_GetWindow().width;
+			var _h = glc_GetWindow().height;
 		
-			var _w = glc_DisplayGetWidth();
-			var _h = glc_DisplayGetHeight();
+			surface_resize(application_surface,_w,_h);
+			
 		
+		}else{
+			
+			var _w = glc_GetWindow().width;
+			var _h = glc_GetWindow().height;
+			
 			if scalingMode == GLC_HORIZONTAL{
 				_w = glc_AspectWidth( _h, aspectRatio);
 			}else if scalingMode == GLC_VERTICAL{
@@ -174,9 +182,7 @@ function _glc_resize_appsurf(camera){
 			}
 		
 			surface_resize(application_surface,_w,_h);
-		
-		}else{
-			surface_resize(application_surface,glc_DisplayGetWidth(),glc_DisplayGetHeight());
+
 		}
 	}
 }

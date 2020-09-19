@@ -1,5 +1,5 @@
-window = glc_CreateWindow({height: 720, aspectRatio: 16/9});
+window = glc_CreateWindow({height: 640, aspectRatio: 3/2});
 glc_SetWindow(window);
 
-camera = glc_CreateCamera({height: 720, aspectRatio: 16/9, strict: false});
+camera = glc_CreateCamera({height: 320, aspectRatio: 3/2});
 glc_SetCamera(0, camera);
