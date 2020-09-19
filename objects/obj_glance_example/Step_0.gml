@@ -8,4 +8,4 @@ camera.y = _t;
 camera.offsetBy(random_range(-10,10),random_range(-10,10));
 
 //zoom
-camera.zoom = sin(current_time*0.001)+2;
+camera.zoom = sin(current_time*0.001)+1.5;

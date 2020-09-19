@@ -1,6 +1,5 @@
 //glance camera manager
 
-
 ////PUBLIC////
 
 function glc_Camera(options) constructor {
@@ -137,7 +136,8 @@ function _glc_UpdateCamera(camera){
 		var _h = height;
 		
 		if strict{
-			zoom = _glc_round_n( zoom, 1);
+			zoom = _glc_round_n(zoom*aspectRatio, 1)/aspectRatio;
+			zoom = max(zoom, aspectRatio/sqrt(width*height));
 		}
 	
 		if scalingMode == GLC_HORIZONTAL{
@@ -186,3 +186,4 @@ function _glc_resize_appsurf(camera){
 		}
 	}
 }
+
