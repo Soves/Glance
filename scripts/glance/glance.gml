@@ -63,3 +63,16 @@ function glc_AspectHeight(width, ratio){
 	return _h;
 }
 
+//display size
+function glc_DisplayGetWidth(){
+	return global.Glance.display.width;
+}
+	
+function glc_DisplayGetHeight(){
+	return global.Glance.display.height;
+}
+	
+function glc_DisplayGetAspectRatio(){
+	return glc_DisplayGetWidth()/glc_DisplayGetHeight();
+}
+

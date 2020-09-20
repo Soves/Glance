@@ -68,18 +68,6 @@ function glc_Window(options) constructor {
 
 #region //global
 	
-	//display size
-	function glc_DisplayGetWidth(){
-		return global.Glance.display.width;
-	}
-	
-	function glc_DisplayGetHeight(){
-		return global.Glance.display.height;
-	}
-	
-	function glc_DisplayGetAspectRatio(){
-		return glc_DisplayGetWidth()/glc_DisplayGetHeight();
-	}
 	
 	//create window
 	function glc_CreateWindow(options){
@@ -125,5 +113,9 @@ function _glc_UpdateWindow(window){
 	if window == glc_GetWindow(){
 		window_set_fullscreen(window.fullscreen);
 		window_set_size( _w, _h);
+	}
+	
+	if glc_GetCamera() != undefined{
+		_glc_resize_appsurf(glc_GetCamera());
 	}
 }
