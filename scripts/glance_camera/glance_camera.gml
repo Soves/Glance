@@ -18,7 +18,7 @@ function glc_Camera(options) constructor {
 	aspectRatio = _glc_option(options, "aspectRatio", glc_GetWindow().aspectRatio);
 	scalingMode = _glc_option(options, "scalingMode", GLC_HORIZONTAL); 
 	rounding = _glc_option(options, "rounding", GLC_ROUND_N); 
-	interpolateSpeed = _glc_option(options, "speed", .25);
+	interpolateSpeed = _glc_option(options, "speed", .2);
 	stretch = _glc_option(options, "stretch", true);
 	zoom = _glc_option(options, "zoom", 1);
 	strict = _glc_option(options, "strict", true);
@@ -30,7 +30,7 @@ function glc_Camera(options) constructor {
 	camera = _glc_option(options, "camera", camera_create());
 	
 	buildViewMatrix = _glc_option(options, "buildViewMatrix", function(){
-		return matrix_build_lookat(x, y, z, x, y, 0, 0, 1, 0);
+		return matrix_build_lookat(realX, realY, realZ, realX, realY, 0, 0, 1, 0);
 	});
 	
 	buildProjectionMatrix = _glc_option(options, "buildProjectionMatrix", function(){
