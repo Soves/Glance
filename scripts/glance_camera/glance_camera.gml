@@ -8,7 +8,7 @@ function glc_Camera(options) constructor {
 	
 	x = _glc_option(options, "x", 0);
 	y = _glc_option(options, "y", 0);
-	z = _glc_option(options, "z", -10);
+	z = _glc_option(options, "z", -999);
 	realX = _glc_option(options, "realX", x);
 	realY = _glc_option(options, "realY", y);
 	realZ = _glc_option(options, "realZ", z);
