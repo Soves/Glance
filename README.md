@@ -7,3 +7,4 @@
 <p align="center"><a href="https://github.com/Soves/Glance/releases">Download</a></p>
 <p align="center"><a href="https://github.com/Soves/Glance/wiki">Documentation</a></p>
 
+<p align="center"> Support for <a href="https://github.com/Soves/zSprite">zSprite</a> depth sorting</p>
