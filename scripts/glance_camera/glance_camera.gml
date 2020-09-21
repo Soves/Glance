@@ -23,19 +23,13 @@ function glc_Camera(options) constructor {
 	zoom = _glc_option(options, "zoom", 1);
 	strict = _glc_option(options, "strict", true);
 	
-	interpolate = _glc_option(options, "interpolate", function(from, to){
-		return lerp(from, to, interpolateSpeed);
-	})
+	interpolate = _glc_option(options, "interpolate", _glc_cam_lerp);
 	
 	camera = _glc_option(options, "camera", camera_create());
 	
-	buildViewMatrix = _glc_option(options, "buildViewMatrix", function(){
-		return matrix_build_lookat(realX, realY, realZ, realX, realY, 0, 0, 1, 0);
-	});
+	buildViewMatrix = _glc_option(options, "buildViewMatrix", _glc_matrix_view);
 	
-	buildProjectionMatrix = _glc_option(options, "buildProjectionMatrix", function(){
-		return matrix_build_projection_ortho(getWidth(), getHeight(), 1, 99999);
-	});
+	buildProjectionMatrix = _glc_option(options, "buildProjectionMatrix", _glc_matrix_proj);
 	
 	//functions
 	
@@ -91,9 +85,13 @@ function glc_Camera(options) constructor {
 	
 	
 	//finally 
+
 	_glc_UpdateCamera(self);
 	_glc_resize_appsurf(self);
 	
+	projectionMatrix = buildProjectionMatrix();
+	camera_set_proj_mat(self.camera, projectionMatrix);
+			
 }
 
 #region //global
@@ -150,10 +148,8 @@ function _glc_UpdateCamera(camera){
 		height = _h;
 	
 		ViewMatrix = buildViewMatrix();
-		projectionMatrix = buildProjectionMatrix();
 
 		camera_set_view_mat(self.camera, ViewMatrix);
-		camera_set_proj_mat(self.camera, projectionMatrix);
 	
 	}
 
@@ -187,3 +183,14 @@ function _glc_resize_appsurf(camera){
 	}
 }
 
+function _glc_matrix_view(){
+	return matrix_build_lookat(realX, realY, realZ, realX, realY, 0, 0, 1, 0);
+}
+
+function _glc_matrix_proj(){
+	return matrix_build_projection_ortho(getWidth(), getHeight(), 1, 99999);
+}
+
+function _glc_cam_lerp(from ,to){
+	return lerp(from, to, 1 - power(interpolateSpeed, delta_time));
+}
