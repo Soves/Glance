@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6db061df-4d00-4c4e-83d6-005d4f12b789","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "glance",
-    "path": "folders/glance.yy",
+    "name": "glance_example",
+    "path": "folders/glance/glance_example.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_glance_bg",

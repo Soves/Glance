@@ -24,6 +24,7 @@ Glance = {
 	}
 };
 
+global.objDelta = -1;
 
 ////PRIVATE////
 

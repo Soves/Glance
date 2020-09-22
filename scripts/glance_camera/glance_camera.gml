@@ -17,7 +17,6 @@ function glc_Camera(options) constructor {
 	height = _glc_option(options, "height", glc_GetWindow().getHeight());
 	aspectRatio = _glc_option(options, "aspectRatio", glc_GetWindow().aspectRatio);
 	scalingMode = _glc_option(options, "scalingMode", GLC_HORIZONTAL); 
-	rounding = _glc_option(options, "rounding", GLC_ROUND_N); 
 	interpolateSpeed = _glc_option(options, "speed", .2);
 	stretch = _glc_option(options, "stretch", true);
 	zoom = _glc_option(options, "zoom", 1);
@@ -76,16 +75,25 @@ function glc_Camera(options) constructor {
 	}
 	
 	static getRounded = function(value){
-		if rounding = GLC_ROUND_N{
-			var _round = getWidth()/glc_DisplayGetWidth();
-			return _glc_round_n( value, _round);
-		}
-		return value;
+		var _round = getWidth()/glc_DisplayGetWidth();
+		return _glc_round_n( value, _round);
 	}
 	
 	
+	//scale
+	static scale = function(){
+		if scalingMode == GLC_HORIZONTAL{
+			width = glc_AspectWidth( height, aspectRatio);
+		}else if scalingMode == GLC_VERTICAL{
+			height = glc_AspectHeight( width, aspectRatio);		
+		}
+	}
+	
 	//finally 
-
+	if (global.objDelta == -1) global.objDelta = instance_create_depth(0,0,0,obj_glance_deltatime);
+	
+	scale();
+		
 	_glc_UpdateCamera(self);
 	_glc_resize_appsurf(self);
 	
@@ -119,40 +127,27 @@ function glc_Camera(options) constructor {
 
 
 function _glc_UpdateCamera(camera){
-	
 	with camera{
 		
 		realX = interpolate(realX, x);
 		realY = interpolate(realY, y);
 		realZ = interpolate(realZ, z);
-		
+
 		realX = getRounded(realX);
 		realY = getRounded(realY);
 		realZ = getRounded(realZ);
-	
-		var _w = width;
-		var _h = height;
 		
 		if strict{
 			zoom = _glc_round_n(zoom*aspectRatio, 1)/aspectRatio;
 			zoom = max(zoom, aspectRatio/sqrt(width*height));
 		}
-	
-		if scalingMode == GLC_HORIZONTAL{
-			_w = glc_AspectWidth( _h, aspectRatio);
-		}else if scalingMode == GLC_VERTICAL{
-			_h = glc_AspectHeight( _w, aspectRatio);		
-		}
-	
-		width = _w;
-		height = _h;
-	
+		
 		ViewMatrix = buildViewMatrix();
 
 		camera_set_view_mat(self.camera, ViewMatrix);
 	
 	}
-
+	
 }
 
 
@@ -192,5 +187,5 @@ function _glc_matrix_proj(){
 }
 
 function _glc_cam_lerp(from ,to){
-	return lerp(from, to, 1 - power(interpolateSpeed, delta_time));
+	return lerp(from, to, 1 - power(interpolateSpeed, global.objDelta.delta));
 }

@@ -1,10 +1,11 @@
 {
   "resources": [
-    {"id":{"name":"spr_glance_bg","path":"sprites/spr_glance_bg/spr_glance_bg.yy",},"order":3,},
-    {"id":{"name":"obj_glance_example","path":"objects/obj_glance_example/obj_glance_example.yy",},"order":1,},
+    {"id":{"name":"spr_glance_bg","path":"sprites/spr_glance_bg/spr_glance_bg.yy",},"order":2,},
+    {"id":{"name":"obj_glance_example","path":"objects/obj_glance_example/obj_glance_example.yy",},"order":0,},
     {"id":{"name":"glance_window","path":"scripts/glance_window/glance_window.yy",},"order":4,},
     {"id":{"name":"glance_camera","path":"scripts/glance_camera/glance_camera.yy",},"order":5,},
-    {"id":{"name":"rm_glance_example","path":"rooms/rm_glance_example/rm_glance_example.yy",},"order":2,},
+    {"id":{"name":"rm_glance_example","path":"rooms/rm_glance_example/rm_glance_example.yy",},"order":1,},
+    {"id":{"name":"obj_glance_deltatime","path":"objects/obj_glance_deltatime/obj_glance_deltatime.yy",},"order":6,},
     {"id":{"name":"glance","path":"scripts/glance/glance.yy",},"order":0,},
   ],
   "Options": [
@@ -29,6 +30,7 @@
   ],
   "Folders": [
     {"folderPath":"folders/glance.yy","order":15,"resourceVersion":"1.0","name":"glance","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/glance/glance_example.yy","order":7,"resourceVersion":"1.0","name":"glance_example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":461609314234257646,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},

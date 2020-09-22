@@ -1,0 +1,2 @@
+//THIS OBJECT EXISTS TO BYPASS A 2.3 BUG WITH delta_time, DO NOT DELETE!
+delta = 0;

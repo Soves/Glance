@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "glance",
-    "path": "folders/glance.yy",
+    "name": "glance_example",
+    "path": "folders/glance/glance_example.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_glance_example",

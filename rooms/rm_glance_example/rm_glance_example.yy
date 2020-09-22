@@ -46,8 +46,8 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "glance",
-    "path": "folders/glance.yy",
+    "name": "glance_example",
+    "path": "folders/glance/glance_example.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_glance_example",
