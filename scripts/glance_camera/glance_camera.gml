@@ -17,7 +17,7 @@ function glc_Camera(options) constructor {
 	height = _glc_option(options, "height", glc_GetWindow().getHeight());
 	aspectRatio = _glc_option(options, "aspectRatio", glc_GetWindow().aspectRatio);
 	scalingMode = _glc_option(options, "scalingMode", GLC_HORIZONTAL); 
-	interpolateSpeed = _glc_option(options, "speed", .2);
+	interpolateSpeed = _glc_option(options, "interpolateSpeed", .2);
 	stretch = _glc_option(options, "stretch", true);
 	zoom = _glc_option(options, "zoom", 1);
 	strict = _glc_option(options, "strict", true);
@@ -187,5 +187,5 @@ function _glc_matrix_proj(){
 }
 
 function _glc_cam_lerp(from ,to){
-	return lerp(from, to, 1 - power(interpolateSpeed, global.objDelta.delta));
+	return lerp(from, to, interpolateSpeed*global.objDelta.delta);
 }
