@@ -12,7 +12,7 @@ function glc_Window(options) constructor {
 	borderless = _glc_option(options, "borderless", false);
 	width = _glc_option(options, "width", glc_DisplayGetWidth());
 	height = _glc_option(options, "height", glc_DisplayGetHeight());
-	aspectRatio = _glc_option(options, "aspectRatio", width/height);
+	aspectRatio = _glc_option(options, "aspectRatio", glc_DisplayGetAspectRatio());
 	scalingMode = _glc_option(options, "scalingMode", GLC_HORIZONTAL); 
 	
 	_glc_UpdateWindow(self);

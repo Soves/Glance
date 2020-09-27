@@ -1,1 +1,1 @@
-delta = delta_time;
+delta = delta_time/60000;
