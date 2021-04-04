@@ -143,9 +143,11 @@ function _glc_UpdateCamera(camera){
 		}
 		
 		ViewMatrix = buildViewMatrix();
-
-		camera_set_view_mat(self.camera, ViewMatrix);
+		projectionMatrix = buildProjectionMatrix();
 	
+	
+		camera_set_view_mat(self.camera, ViewMatrix);
+		camera_set_proj_mat(self.camera, projectionMatrix);
 	}
 	
 }
